@@ -1,0 +1,21 @@
+[debug] Created transactional ClassFileManager with tempDir = C:\Users\Prabhat kashyap\IdeaProjects\websocket-example\target\scala-2.13\classes.bak
+[debug] About to delete class files:
+[debug] 	Routes$$anonfun$service$1.class
+[debug] 	Program$.class
+[debug] 	Routes.class
+[debug] 	Server.class
+[debug] 	Server$.class
+[debug] 	Program.class
+[debug] We backup class files:
+[debug] 	Routes$$anonfun$service$1.class
+[debug] 	Program$.class
+[debug] 	Routes.class
+[debug] 	Server.class
+[debug] 	Server$.class
+[debug] 	Program.class
+[debug] Registering generated classes:
+[debug] 	EchoWebSocketServer.class
+[debug] 	EchoWebSocketServer$.class
+[debug] 	EchoWebSocketServer$$anonfun$1.class
+[debug] 	EchoWebSocketServer$$anonfun$$nestedInanonfun$echoPipe$1$1.class
+[debug] Removing the temporary directory used for backing up class files: C:\Users\Prabhat kashyap\IdeaProjects\websocket-example\target\scala-2.13\classes.bak

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Echo</title>
+</head>
+<body>
+<div>
+    <input type="text" id="message-input" placeholder="Type your message...">
+    <button id="send-button">Send</button>
+    <div id="echo-container"></div>
+</div>
+
+<script>
+    const socket = new WebSocket("ws://localhost:8080/echo");
+    const echoContainer = document.getElementById("echo-container");
+    const messageInput = document.getElementById("message-input");
+    const sendButton = document.getElementById("send-button");
+
+    // Function to append a message to the echo container
+    function appendMessage(message) {
+      const p = document.createElement("p");
+      p.textContent = message;
+      echoContainer.appendChild(p);
+    }
+
+    // Event listener for receiving messages from the WebSocket server
+    socket.addEventListener("message", function (event) {
+      appendMessage(event.data);
+    });
+
+    // Event listener for sending messages when the send button is clicked
+    sendButton.addEventListener("click", function () {
+      const message = messageInput.value.trim();
+      if (message !== "") {
+        socket.send(message);
+        messageInput.value = "";
+      }
+    });
+
+    // Event listener for sending messages when Enter key is pressed
+    messageInput.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        sendButton.click();
+      }
+    });
+</script>
+</body>
+</html>
